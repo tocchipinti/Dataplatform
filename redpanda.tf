@@ -20,5 +20,5 @@ resource "helm_release" "redpanda" {
     value = "true"
     type  = "string"
   }
-  depends_on = [kubectl_manifest.prometheus-operator, helm_release.cert-manager, kubernetes_namespace.redpanda_system, kubectl_manifest.redpanda_crd]
+  depends_on = [helm_release.cert-manager, kubernetes_namespace.redpanda_system, kubectl_manifest.redpanda_crd]
 }
